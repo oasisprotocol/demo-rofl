@@ -1,0 +1,8 @@
+services:
+  test:
+    image: docker.io/alpine/curl:8.11.1@sha256:fea097b3ecc90268410ded10c4820caf7a0a16c0aa6a40de777712407812c633
+    command: |
+      --json '{"key_id": "demo key", "kind": "secp256k1"}' --unix-socket /run/rofl-appd.sock http://localhost/rofl/v1/keys/generate
+    volumes:
+      - /run/rofl-appd.sock:/run/rofl-appd.sock
+
