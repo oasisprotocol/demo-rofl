@@ -1,0 +1,11 @@
+{
+  "name": "oracle",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@oasisprotocol/sapphire-contracts": "^0.2.10",
+    "hardhat": "^2.22.8"
+  },
+  "dependencies": {
+    "bech32": "^2.0.0"
+  }
+}
