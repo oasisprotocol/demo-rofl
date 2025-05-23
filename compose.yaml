@@ -3,6 +3,7 @@ services:
     # See the 'docker' subdirectory for the content of this image.
     # Note that we are using the sha256 hash of the image to ensure integrity.
     image: ghcr.io/oasisprotocol/demo-rofl:latest@sha256:7d7530a845eaa8038e50e43ef2aa192a4c7243b8d6102a2626eeea2c71eefb70
+    platform: linux/amd64
     environment:
       # Address of the oracle contract deployed on Sapphire.
       - CONTRACT_ADDRESS=1234845aaB7b6CD88c7fAd9E9E1cf07638805b20
