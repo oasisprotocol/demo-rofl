@@ -1,0 +1,24 @@
+name: Deploy ROFL App to Testnet
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Build and Deploy ROFL App
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # - name: Install Oasis CLI
+      #   uses: oasisprotocol/setup-oasis-cli
+
+      - name: Build and Deploy ROFL App
+        uses: oasisprotocol/build-deploy-rofl-action
+        with:
+          private_key: ${{ secrets.PRIVATE_KEY }}
