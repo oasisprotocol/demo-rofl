@@ -12,22 +12,32 @@ to create your own version of this app.
 [the ROFL documentation]: https://docs.oasis.io/build/rofl
 [the tutorial]: https://docs.oasis.io/build/rofl/app
 
-## Oracle Smart Contract
+## Getting Started
 
-The `/oracle` directory contains the smart contract code for the oracle implementation, sourced from the [Oasis SDK rofl-oracle example](https://github.com/oasisprotocol/oasis-sdk/tree/main/examples/runtime-sdk/rofl-oracle/oracle). It includes:
-
-- Solidity smart contract (`contracts/Oracle.sol`)
-- Hardhat configuration and deployment scripts
-
-To update this contract code with the latest version:
+### Installation
 
 ```bash
-# Run from the root directory of this repository
-./scripts/update-oracle.sh
+bun install
+cp .env.example .env
+# Edit .env and add your PRIVATE_KEY
 ```
 
-## Existing Deployment
+## Oracle Smart Contract
 
-The `rofl.yaml` in this repository defines an existing deployment named `test`
-that is used for testing of the demo ROFL app. If you want to modify any of the
-application aspects, you need to create your own deployment.
+The smart contract code is sourced from the [Oasis SDK rofl-oracle example](https://github.com/oasisprotocol/oasis-sdk/tree/main/examples/runtime-sdk/rofl-oracle/oracle).
+
+### Deploy Oracle Contract
+
+```bash
+bunx hardhat deploy \
+  --rofl-app-id rofl1qp55evqls4qg6cjw5fnlv4al9ptc0fsakvxvd9uw \
+  --network sapphire-testnet
+```
+
+### Query Oracle Contract
+
+```bash
+bunx hardhat oracle-query \
+  --contract-address 0x... \
+  --network sapphire-testnet
+```

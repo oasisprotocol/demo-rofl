@@ -1,0 +1,29 @@
+{
+  "name": "demo-rofl",
+  "version": "0.3.0",
+  "description": "Demo ROFL app implementing a price oracle",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "clean": "hardhat clean",
+    "node": "hardhat node",
+    "postinstall": "hardhat compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oasisprotocol/demo-rofl"
+  },
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@oasisprotocol/sapphire-contracts": "^0.2.10",
+    "hardhat": "^2.22.8"
+  },
+  "dependencies": {
+    "bech32": "^2.0.0",
+    "dotenv": "^16.4.5"
+  }
+}

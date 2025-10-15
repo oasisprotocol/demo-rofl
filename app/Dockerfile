@@ -4,5 +4,5 @@ FROM docker.io/alpine:3.21.2
 RUN apk add --no-cache curl jq
 
 # The entire application is defined as a shell script.
-ADD app.sh /app.sh
-ENTRYPOINT ["/app.sh"]
+ADD oracle.sh /oracle.sh
+ENTRYPOINT ["/oracle.sh"]
