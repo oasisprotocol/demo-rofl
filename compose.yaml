@@ -2,7 +2,7 @@ services:
   oracle:
     # See the 'docker' subdirectory for the content of this image.
     # Note that we are using the sha256 hash of the image to ensure integrity.
-    image: ghcr.io/oasisprotocol/demo-rofl:v2@sha256:a0d92d3563845a659cd6425b0e0e0b48fc130c988233a1debb323b50e7609962
+    image: ghcr.io/oasisprotocol/demo-rofl:v2@sha256:17dc804783f9a200de6d6d88e24f86a71e18beb33433a8f1a9a3698331940fe0
     build:
       context: docker
     platform: linux/amd64
