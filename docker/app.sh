@@ -1,5 +1,11 @@
 #!/bin/sh
-
+	
+echo "Updating metadata"
+curl -s \
+	--json '{"api": "binance"}' \
+	--unix-socket /run/rofl-appd.sock \
+	http://localhost/rofl/v1/metadata >/dev/null
+	
 while true; do
 	# Fetch a recent price from Binance.
 	price=$(curl -s "https://www.binance.com/api/v3/ticker/price?symbol=${TICKER}" | jq '(.price | tonumber) * 1000000 | trunc')
@@ -17,8 +23,8 @@ while true; do
 	curl -s \
 		--json '{"tx": {"kind": "eth", "data": {"gas_limit": 200000, "to": "'${CONTRACT_ADDRESS}'", "value": 0, "data": "'${data}'"}}}' \
 		--unix-socket /run/rofl-appd.sock \
-  		http://localhost/rofl/v1/tx/sign-submit >/dev/null
+		http://localhost/rofl/v1/tx/sign-submit >/dev/null
 
-  	# Sleep for a while.
+	# Sleep for a while.
 	sleep 60
 done
